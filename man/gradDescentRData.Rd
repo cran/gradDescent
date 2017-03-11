@@ -14,4 +14,3 @@ Kennedy, G. C. (1954). Pressure-Volmue Temperature Relations in CO2 at Elevated 
 American Journal of Science, 225-241.
 }
 \keyword{data}
-
