@@ -4,22 +4,22 @@
 \alias{MBGD}
 \title{Mini-Batch Gradient Descent (MBGD) Method Learning Function}
 \usage{
-MBGD(dataTrain, alpha = 0.1, maxIter = 10, batchRate = 0.5, seed = NULL)
+MBGD(dataTrain, alpha = 0.1, maxIter = 10, nBatch = 2, seed = NULL)
 }
 \arguments{
-\item{dataTrain}{a data.frame that representing training data (\eqn{m \times n}), 
-where \eqn{m} is the number of instances and \eqn{n} is the number 
-of variables where the last column is the output variable. dataTrain 
-must have at least two columns and ten rows of data that contain 
+\item{dataTrain}{a data.frame that representing training data (\eqn{m \times n}),
+where \eqn{m} is the number of instances and \eqn{n} is the number
+of variables where the last column is the output variable. dataTrain
+must have at least two columns and ten rows of data that contain
 only numbers (integer or float).}
 
 \item{alpha}{a float value representing learning rate. Default value is 0.1}
 
 \item{maxIter}{the maximal number of iterations.}
 
-\item{batchRate}{a float value between 0 and 1 representing the training data batch rate.}
+\item{nBatch}{a integer value representing the training data batch.}
 
-\item{seed}{a integer value for static random. Default value is NULL, which means 
+\item{seed}{a integer value for static random. Default value is NULL, which means
 the function will not do static random.}
 }
 \value{
@@ -34,25 +34,24 @@ the training data partially. MBGD has a parameter named batchRate that represent
 the instances percentage of training data.
 }
 \examples{
- 
-################################## 
+##################################
 ## Learning and Build Model with MBGD
-## load R Package data  
+## load R Package data
 data(gradDescentRData)
 ## get z-factor data
 dataSet <- gradDescentRData$CompressilbilityFactor
 ## split dataset
 splitedDataSet <- splitData(dataSet)
 ## build model with 0.8 batch rate MBGD
-MBGDmodel <- MBGD(splitedDataSet$dataTrain, batchRate=0.8) 
+MBGDmodel <- MBGD(splitedDataSet$dataTrain, nBatch=2)
 #show result
 print(MBGDmodel)
 
 }
 \references{
-A. Cotter, O. Shamir, N. Srebro, K. Sridharan 
-Better Mini-Batch Algoritms via Accelerated Gradient Methods, 
-NIPS, 
+A. Cotter, O. Shamir, N. Srebro, K. Sridharan
+Better Mini-Batch Algoritms via Accelerated Gradient Methods,
+NIPS,
 pp. 1647- (2011)
 }
 \seealso{

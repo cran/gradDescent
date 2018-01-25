@@ -7,12 +7,12 @@
 prediction(model, dataTestInput)
 }
 \arguments{
-\item{model}{a matrix of coefficients used as a linear model to predict 
-testing data input. This parameter exclusively produced by the  
+\item{model}{a matrix of coefficients used as a linear model to predict
+testing data input. This parameter exclusively produced by the
 gradient-descent-based learning function.}
 
-\item{dataTestInput}{a data.frame represented dataset with input variables 
-only (\eqn{m \times n-1}), where \eqn{m} is the number of instances 
+\item{dataTestInput}{a data.frame represented dataset with input variables
+only (\eqn{m \times n-1}), where \eqn{m} is the number of instances
 and \eqn{n} is the number of input variables only.}
 }
 \value{
@@ -25,14 +25,13 @@ A function to predict testing data with built gradient descent model
 This function used to predict testing data with only input variable named
 \code{dataTestInput}. The \code{model} parameter is the coefficients
 that produced by gradient-descent-based learning function. The result of
-this function is a dataset that contains \code{dataTestInput} combined 
+this function is a dataset that contains \code{dataTestInput} combined
 with prediction data as the last column of dataset.
 }
 \examples{
- 
-################################## 
+##################################
 ## Predict Testing Data Using GD Model
-## load R Package data  
+## load R Package data
 data(gradDescentRData)
 ## get z-factor Data
 dataSet <- gradDescentRData$CompressilbilityFactor
@@ -48,11 +47,32 @@ dataTestInput <- (splitedDataSet$dataTest)[,1:ncol(splitedDataSet$dataTest)-1]
 prediction <- prediction(model,dataTestInput)
 ## show result()
 prediction
-    
-        
+
+
+##################################
+## Predict Testing Data Using SARAHPlus Model
+## load R Package data
+data(gradDescentRData)
+## get z-factor Data
+dataSet <- gradDescentRData$CompressilbilityFactor
+## do variance scaling to dataset
+featureScalingResult <- varianceScaling(dataSet)
+## split dataset
+splitedDataSet <- splitData(featureScalingResult$scaledDataSet)
+## built model using SARAHPlus
+model <- SARAHPlus(splitedDataSet$dataTrain, alpha=0.1, maxIter=10,
+         innerIter=10, gammaS=0.125, seed=NULL)
+## separate testing data with input only
+dataTestInput <- (splitedDataSet$dataTest)[,1:ncol(splitedDataSet$dataTest)-1]
+## predict testing data using GD model
+prediction <- prediction(model,dataTestInput)
+## show result()
+prediction
+
 }
 \seealso{
-\code{\link{GD}}, \code{\link{MBGD}}, \code{\link{SGD}}, \code{\link{SAGD}},         
-         \code{\link{MGD}}, \code{\link{AGD}}, \code{\link{ADAGRAD}}, \code{\link{ADADELTA}}        
-         \code{\link{RMSPROP}}, \code{\link{ADAM}}
+\code{\link{GD}}, \code{\link{MBGD}}, \code{\link{SGD}}, \code{\link{SAGD}},
+         \code{\link{MGD}}, \code{\link{AGD}}, \code{\link{ADAGRAD}}, \code{\link{ADADELTA}},
+         \code{\link{RMSPROP}}, \code{\link{ADAM}}, \code{\link{SSGD}}, \code{\link{SVRG}},
+         \code{\link{SARAH}}, \code{\link{SARAHPlus}}
 }

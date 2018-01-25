@@ -7,17 +7,17 @@
 ADADELTA(dataTrain, maxIter = 10, momentum = 0.9, seed = NULL)
 }
 \arguments{
-\item{dataTrain}{a data.frame that representing training data (\eqn{m \times n}), 
-where \eqn{m} is the number of instances and \eqn{n} is the number 
-of variables where the last column is the output variable. dataTrain 
-must have at least two columns and ten rows of data that contain 
+\item{dataTrain}{a data.frame that representing training data (\eqn{m \times n}),
+where \eqn{m} is the number of instances and \eqn{n} is the number
+of variables where the last column is the output variable. dataTrain
+must have at least two columns and ten rows of data that contain
 only numbers (integer or float).}
 
 \item{maxIter}{the maximal number of iterations.}
 
 \item{momentum}{a float value represent momentum give a constant speed to learning process.}
 
-\item{seed}{a integer value for static random. Default value is NULL, which means 
+\item{seed}{a integer value for static random. Default value is NULL, which means
 the function will not do static random.}
 }
 \value{
@@ -29,30 +29,29 @@ A function to build prediction model using ADADELTA method.
 \details{
 This function based on \code{\link{SGD}} with an optimization to create
 an adaptive learning rate by hessian approximation correction approach.
-Correction and has less computation load than \code{\link{ADAGRAD}}. This method 
-create an exclusive learning rate and doesn't need \code{alpha} parameter, but uses 
+Correction and has less computation load than \code{\link{ADAGRAD}}. This method
+create an exclusive learning rate and doesn't need \code{alpha} parameter, but uses
 momentum parameter same as \code{\link{MGD}} and \code{\link{AGD}}.
 }
 \examples{
- 
-################################## 
+##################################
 ## Learning and Build Model with ADADELTA
-## load R Package data  
+## load R Package data
 data(gradDescentRData)
 ## get z-factor data
 dataSet <- gradDescentRData$CompressilbilityFactor
 ## split dataset
 splitedDataSet <- splitData(dataSet)
 ## build model with ADADELTA
-ADADELTAmodel <- ADADELTA(splitedDataSet$dataTrain) 
+ADADELTAmodel <- ADADELTA(splitedDataSet$dataTrain)
 #show result
 print(ADADELTAmodel)
 
 }
 \references{
 M. D. Zeiler
-Adadelta: An Adaptive Learning Rate Method, 
-arXiv: 1212.5701v1, 
+Adadelta: An Adaptive Learning Rate Method,
+arXiv: 1212.5701v1,
 pp. 1-6 (2012)
 }
 \seealso{

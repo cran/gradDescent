@@ -7,16 +7,16 @@
 varianceDescaling(dataSet, varianceParameter)
 }
 \arguments{
-\item{dataSet}{a data.frame that representing dataset (\eqn{m \times n}), 
-where \eqn{m} is the number of instances and \eqn{n} is the number 
-of variables where the last column is the output variable. dataSet 
-must have at leas two columns and ten rows of data that contain 
+\item{dataSet}{a data.frame that representing dataset (\eqn{m \times n}),
+where \eqn{m} is the number of instances and \eqn{n} is the number
+of variables where the last column is the output variable. dataSet
+must have at leas two columns and ten rows of data that contain
 only numbers (integer or float).}
 
-\item{varianceParameter}{a matrix that has value of variance scaling 
+\item{varianceParameter}{a matrix that has value of variance scaling
 parameter, such as mean value and standard deviation value of
 data that can be used to restore the original value of dataset.
-This parameter is exclusively produced by \code{\link{varianceScaling}} 
+This parameter is exclusively produced by \code{\link{varianceScaling}}
 function.}
 }
 \value{
@@ -27,15 +27,14 @@ A function to revert the value that has been done by variance/ .
 standardization scaling method.
 }
 \details{
-This function changes the value of variance scaled dataset that 
-produced by \code{\link{varianceScaling}} function and represented 
+This function changes the value of variance scaled dataset that
+produced by \code{\link{varianceScaling}} function and represented
 by data.frame object.
 }
 \examples{
- 
-################################## 
+##################################
 ## Revert Variance Scaling
-## load R Package data  
+## load R Package data
 data(gradDescentRData)
 ## get z-factor Data
 dataSet <- gradDescentRData$CompressilbilityFactor

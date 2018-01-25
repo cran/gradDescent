@@ -7,16 +7,16 @@
 varianceScaling(dataSet)
 }
 \arguments{
-\item{dataSet}{a data.frame that representing dataset to be processed. 
+\item{dataSet}{a data.frame that representing dataset to be processed.
 dataSet must have at leas two columns and ten rows of data that
-contain only numbers (integer or float). The last column to the  
+contain only numbers (integer or float). The last column to the
 left will be defined as output variable.}
 }
 \value{
 a list contains feature scaled dataset and scaling parameter
 }
 \description{
-A function to do feature scaling to dataset with variance/standardization  
+A function to do feature scaling to dataset with variance/standardization
 scaling method .
 }
 \details{
@@ -24,10 +24,9 @@ This function changes the value of dataset that represented by data.frame
 object into variance scaled value that has interval value near -1 to 1.
 }
 \examples{
- 
-################################## 
+##################################
 ## Feature scaling with Variance Scaling Method
-## load R Package data  
+## load R Package data
 data(gradDescentRData)
 ## get z-factor Data
 dataSet <- gradDescentRData$CompressilbilityFactor

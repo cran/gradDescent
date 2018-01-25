@@ -2,9 +2,9 @@
 #
 #  This file is a part of the R package "gradDescent".
 #
-#  Author: Dendi Handian 
-#  Co-author: Imam Fachmi Nasrulloh
-#  Supervisors: Lala Septem Riza, Rani Megasari
+#  Author: Galih Praja Wijaya
+#  Co-author: Dendi Handian, Imam Fachmi Nasrulloh
+#  Supervisors: Lala Septem Riza, Rani Megasari, Enjun Junaeti
 #  Copyright (c) Department of Computer Science Education, Indonesia University of Education.
 #
 #  This package is free software: you can redistribute it and/or modify it under
@@ -16,15 +16,15 @@
 #  A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 #
 #############################################################################
-#' This is a dataset that collected experimentaly by Kennedy in 1954 to obtain the density value of CO2. 
+#' This is a dataset that collected experimentaly by Kennedy in 1954 to obtain the density value of CO2.
 #' Parameter used in the experiment are temperature and pressure, which it can be a parameter to
 #' obtain compressibility factor value of CO2.
-#' 
+#'
 #' @title Data set of the package
 #' @name gradDescentRData
 #' @docType data
-#' @references 
+#' @references
 #' Kennedy, G. C. (1954). Pressure-Volmue Temperature Relations in CO2 at Elevated Temperatures and Pressures.
-#' American Journal of Science, 225-241. 
+#' American Journal of Science, 225-241.
 #' @keywords data
 NULL

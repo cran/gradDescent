@@ -7,11 +7,11 @@
 RMSE(outputData, prediction)
 }
 \arguments{
-\item{outputData}{a data.frame represented dataset with output variable 
-only (\eqn{m \times 1}), where \eqn{m} is the number of instances 
+\item{outputData}{a data.frame represented dataset with output variable
+only (\eqn{m \times 1}), where \eqn{m} is the number of instances
 has one variable, which is the output.}
 
-\item{prediction}{a data.frame represented prediction data with output 
+\item{prediction}{a data.frame represented prediction data with output
 variable only (\eqn{m \times 1}), where \eqn{m} is the number of
 instances has one variable, which is the output.}
 }
@@ -28,10 +28,9 @@ the real output value. \code{prediction} is the second parameter of
 this function representing the prediction value.
 }
 \examples{
- 
-################################## 
+##################################
 ## Calculate Error using RMSE
-## load R Package data  
+## load R Package data
 data(gradDescentRData)
 ## get z-factor Data
 dataSet <- gradDescentRData$CompressilbilityFactor
@@ -46,7 +45,7 @@ dataTestInput <- (splitedDataSet$dataTest)[,1:ncol(splitedDataSet$dataTest)-1]
 ## predict testing data using GD model
 predictionData <- prediction(model, dataTestInput)
 ## calculate error using rmse
-errorValue <- RMSE(splitedDataSet$dataTest[,ncol(splitedDataSet$dataTest)], 
+errorValue <- RMSE(splitedDataSet$dataTest[,ncol(splitedDataSet$dataTest)],
 predictionData[,ncol(predictionData)])
 ## show result
 errorValue

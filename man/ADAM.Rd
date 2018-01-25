@@ -7,17 +7,17 @@
 ADAM(dataTrain, alpha = 0.1, maxIter = 10, seed = NULL)
 }
 \arguments{
-\item{dataTrain}{a data.frame that representing training data (\eqn{m \times n}), 
-where \eqn{m} is the number of instances and \eqn{n} is the number 
-of variables where the last column is the output variable. dataTrain 
-must have at least two columns and ten rows of data that contain 
+\item{dataTrain}{a data.frame that representing training data (\eqn{m \times n}),
+where \eqn{m} is the number of instances and \eqn{n} is the number
+of variables where the last column is the output variable. dataTrain
+must have at least two columns and ten rows of data that contain
 only numbers (integer or float).}
 
 \item{alpha}{a float value representing learning rate. Default value is 0.1}
 
 \item{maxIter}{the maximal number of iterations.}
 
-\item{seed}{a integer value for static random. Default value is NULL, which means 
+\item{seed}{a integer value for static random. Default value is NULL, which means
 the function will not do static random.}
 }
 \value{
@@ -31,25 +31,24 @@ This function based on \code{\link{SGD}} with an optimization to create
 an adaptive learning rate by two moment estimation called mean and variance.
 }
 \examples{
- 
-################################## 
+##################################
 ## Learning and Build Model with ADAM
-## load R Package data  
+## load R Package data
 data(gradDescentRData)
 ## get z-factor data
 dataSet <- gradDescentRData$CompressilbilityFactor
 ## split dataset
 splitedDataSet <- splitData(dataSet)
 ## build model with ADAM
-ADAMmodel <- ADAM(splitedDataSet$dataTrain) 
+ADAMmodel <- ADAM(splitedDataSet$dataTrain)
 #show result
-print(ADAM)
+print(ADAMmodel)
 
 }
 \references{
 D.P Kingma, J. Lei
-Adam: a Method for Stochastic Optimization, 
-International Conference on Learning Representation, 
+Adam: a Method for Stochastic Optimization,
+International Conference on Learning Representation,
 pp. 1-13 (2015)
 }
 \seealso{

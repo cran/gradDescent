@@ -7,17 +7,17 @@
 SAGD(dataTrain, alpha = 0.1, maxIter = 10, seed = NULL)
 }
 \arguments{
-\item{dataTrain}{a data.frame that representing training data (\eqn{m \times n}), 
-where \eqn{m} is the number of instances and \eqn{n} is the number 
-of variables where the last column is the output variable. dataTrain 
-must have at least two columns and ten rows of data that contain 
+\item{dataTrain}{a data.frame that representing training data (\eqn{m \times n}),
+where \eqn{m} is the number of instances and \eqn{n} is the number
+of variables where the last column is the output variable. dataTrain
+must have at least two columns and ten rows of data that contain
 only numbers (integer or float).}
 
 \item{alpha}{a float value representing learning rate. Default value is 0.1}
 
 \item{maxIter}{the maximal number of iterations.}
 
-\item{seed}{a integer value for static random. Default value is NULL, which means 
+\item{seed}{a integer value for static random. Default value is NULL, which means
 the function will not do static random.}
 }
 \value{
@@ -28,31 +28,30 @@ A function to build prediction model using Stochastic Average Gradient Descent (
 }
 \details{
 This function based on \code{\link{SGD}} that only compute one instances of
-of training data stochasticaly. But \code{SAGD} has an averaging control optimization 
-to decide between do the coefficient update or not randomly. This optimization 
-will speed-up the learning, if it doesn't perform computation and 
+of training data stochasticaly. But \code{SAGD} has an averaging control optimization
+to decide between do the coefficient update or not randomly. This optimization
+will speed-up the learning, if it doesn't perform computation and
 update the coefficient.
 }
 \examples{
- 
-################################## 
+##################################
 ## Learning and Build Model with SAGD
-## load R Package data  
+## load R Package data
 data(gradDescentRData)
 ## get z-factor data
 dataSet <- gradDescentRData$CompressilbilityFactor
 ## split dataset
 splitedDataSet <- splitData(dataSet)
 ## build model with SAGD
-SAGDmodel <- SAGD(splitedDataSet$dataTrain) 
+SAGDmodel <- SAGD(splitedDataSet$dataTrain)
 #show result
 print(SAGDmodel)
 
 }
 \references{
 M. Schmidt, N. Le Roux, F. Bach
-Minimizing Finite Sums with the Stochastic Average Gradient, 
-INRIA-SIERRA Project - Team Departement d'informatique de l'Ecole Normale Superieure, 
+Minimizing Finite Sums with the Stochastic Average Gradient,
+INRIA-SIERRA Project - Team Departement d'informatique de l'Ecole Normale Superieure,
 (2013)
 }
 \seealso{

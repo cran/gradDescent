@@ -7,16 +7,16 @@
 minmaxDescaling(dataSet, minmaxParameter)
 }
 \arguments{
-\item{dataSet}{a data.frame that representing dataset (\eqn{m \times n}), 
-where \eqn{m} is the number of instances and \eqn{n} is the number 
-of variables where the last column is the output variable. dataSet 
-must have at least two columns and ten rows of data that contain 
+\item{dataSet}{a data.frame that representing dataset (\eqn{m \times n}),
+where \eqn{m} is the number of instances and \eqn{n} is the number
+of variables where the last column is the output variable. dataSet
+must have at least two columns and ten rows of data that contain
 only numbers (integer or float).}
 
-\item{minmaxParameter}{a matrix that has value of minmax scaling 
+\item{minmaxParameter}{a matrix that has value of minmax scaling
 parameter, such as minimum value and maximum value of data that
-can be used to restore the original value of dataset. This   
-parameter is exclusively produced by \code{\link{varianceScaling}} 
+can be used to restore the original value of dataset. This
+parameter is exclusively produced by \code{\link{varianceScaling}}
 function.}
 }
 \value{
@@ -27,15 +27,14 @@ A function to revert the value that has been done by min-max
 scaling method.
 }
 \details{
-This function changes the value of min-max scaled dataset that 
-produced by \code{\link{varianceScaling}} function and represented 
+This function changes the value of min-max scaled dataset that
+produced by \code{\link{varianceScaling}} function and represented
 by data.frame object.
 }
 \examples{
- 
-################################## 
+##################################
 ## Revert Min-Max Scaling
-## load R Package data  
+## load R Package data
 data(gradDescentRData)
 ## get z-factor Data
 dataSet <- gradDescentRData$CompressilbilityFactor

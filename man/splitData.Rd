@@ -7,17 +7,17 @@
 splitData(dataSet, dataTrainRate = 0.5, seed = NULL)
 }
 \arguments{
-\item{dataSet}{a data.frame that representing dataset (\eqn{m \times n}), 
-where \eqn{m} is the number of instances and \eqn{n} is the number 
-of variables where the last column is the output variable. dataSet 
-must have at least two columns and ten rows of data that contain 
+\item{dataSet}{a data.frame that representing dataset (\eqn{m \times n}),
+where \eqn{m} is the number of instances and \eqn{n} is the number
+of variables where the last column is the output variable. dataSet
+must have at least two columns and ten rows of data that contain
 only numbers (integer or float).}
 
 \item{dataTrainRate}{a float number between 0 to 1 representing the
 training data rate of given dataset. This parameter has
 default value of 0.5.}
 
-\item{seed}{a integer value for static random. Default value is NULL, which 
+\item{seed}{a integer value for static random. Default value is NULL, which
 means the function will not do static random.}
 }
 \value{
@@ -28,18 +28,17 @@ A function to split dataset into training and testing data
 }
 \details{
 This function split dataset into training and testing data. By default,
-this function split dataset into 50% of \code{dataTrain} and 50% of 
-\code{dataTest}. You can decide the training data rate by change the 
+this function split dataset into 50% of \code{dataTrain} and 50% of
+\code{dataTest}. You can decide the training data rate by change the
 value of \code{dataTrainRate}. Example, if you want to set the training
 data rate by 80%, you can simply set the \code{dataTrainRate} to 0.8.
 As the remaining of \code{dataTrainRate} value, which is 0.2, will be
 set as \code{dataTest} rate.
 }
 \examples{
- 
-################################## 
+##################################
 ## Splitting Dataset into Training and Testing Data
-## load R Package data  
+## load R Package data
 data(gradDescentRData)
 ## get z-factor data
 dataSet <- gradDescentRData$CompressilbilityFactor

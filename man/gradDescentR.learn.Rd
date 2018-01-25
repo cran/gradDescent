@@ -9,10 +9,10 @@ gradDescentR.learn(dataSet, featureScaling = TRUE,
   seed = NULL)
 }
 \arguments{
-\item{dataSet}{a data.frame that representing training data (\eqn{m \times n}), 
-where \eqn{m} is the number of instances and \eqn{n} is the number 
-of variables where the last column is the output variable. dataTrain 
-must have at least two columns and ten rows of data that contain 
+\item{dataSet}{a data.frame that representing training data (\eqn{m \times n}),
+where \eqn{m} is the number of instances and \eqn{n} is the number
+of variables where the last column is the output variable. dataTrain
+must have at least two columns and ten rows of data that contain
 only numbers (integer or float).}
 
 \item{featureScaling}{a boolean value that decide to do feature scaling on dataset.
@@ -24,22 +24,23 @@ The default value is \code{"VARIANCE"}, which the function will do Variance Scal
 Standardization to dataset.}
 
 \item{learningMethod}{a string value that represent the learning method to do model building.
-There are ten option for this arguments: \code{"GD"}, \code{"MBGD"}, \code{"SGD"}, 
+There are ten option for this arguments: \code{"GD"}, \code{"MBGD"}, \code{"SGD"},
 \code{"SAGD"}, \code{"MGD"}, \code{"AGD"}, \code{"ADAGRAD"}, \code{"ADADELTA"},
-\code{"RMSPROP"}, and \code{"ADAM"}. The default value is \code{"GD"}, which the
+\code{"RMSPROP"}, \code{"ADAM"}, \code{"SSGD"}, \code{"SVRG"}, \code{"SARAH"}
+and \code{"SARAHPlus"}. The default value is \code{"GD"}, which the
 function will to Gradient Descent learning.}
 
-\item{control}{a list containing all arguments, depending on the learning algorithm to use. The following list are 
+\item{control}{a list containing all arguments, depending on the learning algorithm to use. The following list are
                  parameters required for each methods.
 \itemize{
        \item \code{alpha}: a float value in interval of [0,1] that represent the step-size or learning rate
-             of the learning. The default value is 0.1.    
+             of the learning. The default value is 0.1.
        \item \code{maxIter}: a integer value that represent the iteration/loop/epoch of the learning.
-             The default value is 10, which the function will do 10 times learning calculation. 
+             The default value is 10, which the function will do 10 times learning calculation.
 
 }}
 
-\item{seed}{a integer value for static random. Default value is NULL, which the 
+\item{seed}{a integer value for static random. Default value is NULL, which the
 the function will not do static random.}
 }
 \value{
@@ -50,19 +51,18 @@ A top-level funtion to generate/learn the model from numerical data
 using a selected gradient descent method.
 }
 \details{
-This function makes accessible all learning methods that are implemented 
-in this package. All of the methods use this function as interface for the learning 
-stage, so users do not need to call other functions in the learning phase. 
-In order to obtain good results, users need to adjust some parameters such as the 
-number of labels, the type of the shape of the membership function, the maximal number of iterations, 
+This function makes accessible all learning methods that are implemented
+in this package. All of the methods use this function as interface for the learning
+stage, so users do not need to call other functions in the learning phase.
+In order to obtain good results, users need to adjust some parameters such as the
+number of labels, the type of the shape of the membership function, the maximal number of iterations,
 the step size of the gradient descent, or other method-dependent parameters which are collected in the \code{control}
 parameter. After creating the model using this function, it can be used to predict new data with \code{\link{predict}}.
 }
 \examples{
- 
-################################## 
+##################################
 ## Learning and Build Model with GD
-## load R Package data  
+## load R Package data
 data(gradDescentRData)
 ## get z-factor data
 dataSet <- gradDescentRData$CompressilbilityFactor

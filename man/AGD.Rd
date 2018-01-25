@@ -7,10 +7,10 @@
 AGD(dataTrain, alpha = 0.1, maxIter = 10, momentum = 0.9, seed = NULL)
 }
 \arguments{
-\item{dataTrain}{a data.frame that representing training data (\eqn{m \times n}), 
-where \eqn{m} is the number of instances and \eqn{n} is the number 
-of variables where the last column is the output variable. dataTrain 
-must have at least two columns and ten rows of data that contain 
+\item{dataTrain}{a data.frame that representing training data (\eqn{m \times n}),
+where \eqn{m} is the number of instances and \eqn{n} is the number
+of variables where the last column is the output variable. dataTrain
+must have at least two columns and ten rows of data that contain
 only numbers (integer or float).}
 
 \item{alpha}{a float value representing learning rate. Default value is 0.1}
@@ -19,7 +19,7 @@ only numbers (integer or float).}
 
 \item{momentum}{a float value represent momentum give a constant speed to learning process.}
 
-\item{seed}{a integer value for static random. Default value is NULL, which means 
+\item{seed}{a integer value for static random. Default value is NULL, which means
 the function will not do static random.}
 }
 \value{
@@ -33,25 +33,24 @@ This function based on \code{\link{SGD}} and \code{\link{MGD}} with optimization
 to accelerate the learning with momentum constant in each iteration.
 }
 \examples{
- 
-################################## 
+##################################
 ## Learning and Build Model with AGD
-## load R Package data  
+## load R Package data
 data(gradDescentRData)
 ## get z-factor data
 dataSet <- gradDescentRData$CompressilbilityFactor
 ## split dataset
 splitedDataSet <- splitData(dataSet)
 ## build model with AGD
-AGDmodel <- AGD(splitedDataSet$dataTrain) 
+AGDmodel <- AGD(splitedDataSet$dataTrain)
 #show result
 print(AGDmodel)
 
 }
 \references{
 Y. Nesterov
-A method for unconstrained convex minimization problem with the rate of convergence O (1/k2), 
-Soviet Mathematics Doklady 27 (2), 
+A method for unconstrained convex minimization problem with the rate of convergence O (1/k2),
+Soviet Mathematics Doklady 27 (2),
 pp. 543-547 (1983)
 }
 \seealso{

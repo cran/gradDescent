@@ -7,17 +7,17 @@
 ADAGRAD(dataTrain, alpha = 0.1, maxIter = 10, seed = NULL)
 }
 \arguments{
-\item{dataTrain}{a data.frame that representing training data (\eqn{m \times n}), 
-where \eqn{m} is the number of instances and \eqn{n} is the number 
-of variables where the last column is the output variable. dataTrain 
-must have at least two columns and ten rows of data that contain 
+\item{dataTrain}{a data.frame that representing training data (\eqn{m \times n}),
+where \eqn{m} is the number of instances and \eqn{n} is the number
+of variables where the last column is the output variable. dataTrain
+must have at least two columns and ten rows of data that contain
 only numbers (integer or float).}
 
 \item{alpha}{a float value representing learning rate. Default value is 0.1}
 
 \item{maxIter}{the maximal number of iterations.}
 
-\item{seed}{a integer value for static random. Default value is NULL, which means 
+\item{seed}{a integer value for static random. Default value is NULL, which means
 the function will not do static random.}
 }
 \value{
@@ -31,25 +31,24 @@ This function based on \code{\link{SGD}} with an optimization to create
 an adaptive learning rate with an approach that accumulate previous cost in each iteration.
 }
 \examples{
- 
-################################## 
+##################################
 ## Learning and Build Model with ADAGRAD
-## load R Package data  
+## load R Package data
 data(gradDescentRData)
 ## get z-factor data
 dataSet <- gradDescentRData$CompressilbilityFactor
 ## split dataset
 splitedDataSet <- splitData(dataSet)
 ## build model with ADAGRAD
-ADAGRADmodel <- ADAGRAD(splitedDataSet$dataTrain) 
+ADAGRADmodel <- ADAGRAD(splitedDataSet$dataTrain)
 #show result
 print(ADAGRADmodel)
 
 }
 \references{
 J. Duchi, E. Hazan, Y. Singer
-Adaptive Subgradient Methods for Online Learning and Stochastic Optimization, 
-Journal of Machine Learning Research 12, 
+Adaptive Subgradient Methods for Online Learning and Stochastic Optimization,
+Journal of Machine Learning Research 12,
 pp. 2121-2159 (2011)
 }
 \seealso{

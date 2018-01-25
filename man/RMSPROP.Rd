@@ -8,10 +8,10 @@ RMSPROP(dataTrain, alpha = 0.1, maxIter = 10, momentum = 0.9,
   seed = NULL)
 }
 \arguments{
-\item{dataTrain}{a data.frame that representing training data (\eqn{m \times n}), 
-where \eqn{m} is the number of instances and \eqn{n} is the number 
-of variables where the last column is the output variable. dataTrain 
-must have at least two columns and ten rows of data that contain 
+\item{dataTrain}{a data.frame that representing training data (\eqn{m \times n}),
+where \eqn{m} is the number of instances and \eqn{n} is the number
+of variables where the last column is the output variable. dataTrain
+must have at least two columns and ten rows of data that contain
 only numbers (integer or float).}
 
 \item{alpha}{a float value representing learning rate. Default value is 0.1}
@@ -20,7 +20,7 @@ only numbers (integer or float).}
 
 \item{momentum}{a float value represent momentum give a constant speed to learning process.}
 
-\item{seed}{a integer value for static random. Default value is NULL, which means 
+\item{seed}{a integer value for static random. Default value is NULL, which means
 the function will not do static random.}
 }
 \value{
@@ -36,25 +36,24 @@ In other word, this method combine the \code{\link{ADAGRAD}} and \code{\link{ADA
 approaches.
 }
 \examples{
- 
-################################## 
+##################################
 ## Learning and Build Model with RMSPROP
-## load R Package data  
+## load R Package data
 data(gradDescentRData)
 ## get z-factor data
 dataSet <- gradDescentRData$CompressilbilityFactor
 ## split dataset
 splitedDataSet <- splitData(dataSet)
 ## build model with RMSPROP
-RMSPROPmodel <- RMSPROP(splitedDataSet$dataTrain) 
+RMSPROPmodel <- RMSPROP(splitedDataSet$dataTrain)
 #show result
 print(RMSPROPmodel)
 
 }
 \references{
 M. D. Zeiler
-Adadelta: An Adaptive Learning Rate Method, 
-arXiv: 1212.5701v1, 
+Adadelta: An Adaptive Learning Rate Method,
+arXiv: 1212.5701v1,
 pp. 1-6 (2012)
 }
 \seealso{

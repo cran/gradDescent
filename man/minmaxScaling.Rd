@@ -7,10 +7,10 @@
 minmaxScaling(dataSet)
 }
 \arguments{
-\item{dataSet}{a data.frame that representing dataset (\eqn{m \times n}), 
-where \eqn{m} is the number of instances and \eqn{n} is the number 
-of variables where the last column is the output variable. dataSet 
-must have at least two columns and ten rows of data that contain 
+\item{dataSet}{a data.frame that representing dataset (\eqn{m \times n}),
+where \eqn{m} is the number of instances and \eqn{n} is the number
+of variables where the last column is the output variable. dataSet
+must have at least two columns and ten rows of data that contain
 only numbers (integer or float).}
 }
 \value{
@@ -24,10 +24,9 @@ This function changes the value of dataset that represented by data.frame
 object into min-max scaled value that has interval between 0 to 1.
 }
 \examples{
- 
-################################## 
+##################################
 ## Feature scaling with Min-Max Scaling Method
-## load R Package data  
+## load R Package data
 data(gradDescentRData)
 ## get z-factor Data
 dataSet <- gradDescentRData$CompressilbilityFactor

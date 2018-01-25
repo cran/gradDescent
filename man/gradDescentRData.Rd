@@ -5,7 +5,7 @@
 \alias{gradDescentRData}
 \title{Data set of the package}
 \description{
-This is a dataset that collected experimentaly by Kennedy in 1954 to obtain the density value of CO2. 
+This is a dataset that collected experimentaly by Kennedy in 1954 to obtain the density value of CO2.
 Parameter used in the experiment are temperature and pressure, which it can be a parameter to
 obtain compressibility factor value of CO2.
 }
